@@ -1,0 +1,70 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+  <title>Calculation of the Temperature</title>
+  <script>
+
+  function temperature() {
+  document.getElementById("temp").innerHTML = "";
+    var x = 0;
+    var y = 0.2;
+    var a =Number(document.getElementById("a").value);
+    var t ;
+	var t1=0 ,x1 ,y1;
+	if (a<=5 ){
+
+
+
+    while ( x<6 ) {
+    y = 0.2;
+    x++;
+	while ( y<= 1.2){
+	y = y + 0.2;
+	t = Math.abs((a*x*x*y*y)+((6-x)*(6-x))+(x/y)-(a*x/y)).toFixed(2) ;
+	document.getElementById("temp").innerHTML += "The Temperature " + t + "<br>";
+	
+	
+		
+if (t1==0 || t1>t){
+	
+	t1=t;
+	document.getElementById("t1").innerHTML="The lowest temperature is " + t1 ;
+	x1=x;
+	document.getElementById("x1").innerHTML="x is "+ x1 ;
+	y1=y;
+	document.getElementById("y1").innerHTML="y is"+ y1 ;
+	
+	}
+	}
+	
+
+      
+    }
+    
+    console.log(t1)
+    
+  }
+  else {
+  //a = "The quality of raw metarial is " + a + "Which is not between 0-5 ";
+   document.getElementById("temp").innerHTML = "The Quality of the raw material " + a + "Which is not between 0-5"
+  }
+  }
+
+  </script>
+</head>
+<body>
+  <h1></h1>
+  <lable>The quality (a):</lable><input type="text" id="a"><br>
+  <p><input type="button" value="Temperatures:" onclick="temperature()"></p>
+  <p id="temp"> </p>
+  <p id="t1"> </p>
+  <p id="x1"> </p>
+  <p id="y1"> </p>
+  
+  
+  
+</body>
+</html>

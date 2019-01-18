@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Solve a quadratic equation</title>
+<script>
+"use strict";
+//Function to Solve a quadratic equation//
+function solution() {
+    var x1, x2, d, a, b, c, d1, d2;
+    a = Number(document.getElementById("id1").value);
+	b = Number(document.getElementById("id2").value);
+	c = Number(document.getElementById("id3").value);
+    d1 = (b*b)-(4*a*c);
+	d2=Math.sqrt(d1);
+
+	x1 = (-b+d2)/(2*a);
+    document.getElementById("id5").value = x1.toFixed(2);
+	x2 = (-b-d2)/(2*a);
+    document.getElementById("id6").value = x2.toFixed(2);
+if(a==0){
+document.getElementById("message").innerHTML= "The equation is not quadratic!"
+}else{
+if (d1<0){
+document.getElementById("message").innerHTML="There are no real roots!";
+}
+}
+
+}
+</script>
+</head>
+
+<body>
+
+<h1>Solution Of The Quadratic Equation</h1>
+
+<p>
+Give the coefficients a, b & c of The Quadratic Equation ax^2+bx+c=0 and click on the Calculate button.
+</p>
+
+
+a: <input id="id1" type="text">
+b: <input id="id2" type="text">
+c: <input id="id3" type="text">
+<input type="button" value="Calculate" onclick="solution()" >
+<p>
+x1: <input id="id5" type="text" disabled>
+x2: <input id="id6" type="text" disabled>
+<p id="message"></p>
+
+
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Guessing Game</title>
+<script>
+"use strict";
+var numc = Math.floor(Math.random() * 100) + 1;
+var count = 0;
+//Function to calculate the number of player and compares with the computers number //
+function Try_Your_luck() {
+    var num1, guess;
+
+
+var num1= Number(document.getElementById("id2").value); 
+ if (numc > num1){
+ guess = "Your guess " + num1 +" is smaller than the number ";
+document.getElementById("message").innerHTML= guess;
+}
+else if (numc < num1){
+guess = "Your guess " + num1 +" is greater than the number ";
+document.getElementById("message").innerHTML= guess;
+}
+else if (numc == num1){
+guess = "BINGO!...Your guess " + num1 +" is correct ";
+document.getElementById("message").innerHTML= guess;
+
+}
+count++;
+if (count>5 && numc != num1 ){
+guess =(alert("you couldn't match the number. The number was "+ numc +" .Sorry! "))   ;
+document.getElementById("message1").innerHTML= guess;
+}
+
+}
+</script>
+</head>
+
+<body>
+
+<h1>Lucky Number</h1>
+
+<p> Guess your number : <input type="text" id="id2"      onkeypress="if (event.keyCode == 13) Try_Your_luck();">
+</p> 
+<p id="message"></p>
+<p id="message1"></p>
+
+
+
+
+</body>
+</html>

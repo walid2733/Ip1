@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Reaction distance & Total distance</title>
+</head>
+<body>
+<h1>Reaction distance & Total distance</h1>
+<p id="velocity"></p>
+<p id="time"></p>
+<p id="result1"></p>
+<p id="result2"></p>
+<p id="result3"></p>
+
+<script>
+/*this program calculates the Reaction distance & Total distance.*/
+var velocity,time,reactiond,stoppingd,totald;
+velocity = Number(prompt(" What is the velocity (km/h) of the car?"));
+time = Number(prompt("what is The reaction time(sec)"));
+reactiond = (velocity*time)/3.6;      //the formula of Reaction distance//
+stoppingd = (velocity*velocity)/233;    //the formula of Stopping distance//
+totald =  reactiond+stoppingd;    //the formula of Total distance//
+document.getElementById("velocity").innerHTML = "The velocity (km/h) of the car " + time + "kmh<sup>-1</sup>";
+document.getElementById("time").innerHTML = "The reaction Time " + time + "sec";
+document.getElementById("result1").innerHTML = "The Reaction distance " + reactiond.toFixed(2) + "m";
+document.getElementById("result2").innerHTML = "The Stopping distance " + stoppingd.toFixed(2) + "m";
+document.getElementById("result3").innerHTML = "The Total distance " + totald.toFixed(2) + "m";
+//alert ("the Distance is"+ distance.toFixed(2));//
+console.log("Reaction distance" + reactiond);
+console.log("Stopping distance" + stoppingd);
+console.log("Total distance" + totald);
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flip a coin</title>
+  <script>
+
+  function flip() {
+    var input = Number(document.getElementById("time").value);
+    var head = 0;
+    var tail = 0;
+    var c = 0;
+
+    var coin ;
+
+    while (c < input) {
+
+    var coin = Math.round(Math.random());
+
+      if (coin == 0) {
+        head++;
+      }
+      else {
+        tail++;
+      }
+      c++;
+    }
+    document.getElementById("heads").innerHTML = "The number of heads " + head;
+    document.getElementById("pheads").innerHTML = "The Persentage of heads " + (head / input * 100).toFixed(2);
+    document.getElementById("tails").innerHTML = "The number of tails " + tail;
+    document.getElementById("ptails").innerHTML = "The Persentage of tails " + (tail / input * 100).toFixed(2);
+  }
+
+  </script>
+</head>
+<body>
+  <h1></h1>
+  <lable>Number of Flips:</lable><input type="text" id="time"><br>
+  <p><input type="button" value="FILP THE COIN" onclick="flip()"></p>
+  <p id="heads"></p>
+  <p id="pheads"></p>
+  <p id="tails"></p>
+  <p id="ptails"></p>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Array example</title>
+
+<script>
+
+//Global varaibles
+var width = []; //an array for the widths
+var height = []; //an array for the heights
+var area = []; //
+var count = 1; //the number of the elements
+
+//This function inserts a new value into the array
+function insert() {
+    width[count] = Number(document.getElementById("wdt").value);
+    height[count] = Number(document.getElementById("hgh").value);
+    area[count] = width[count] * height[count];
+    count = count + 1;
+    document.getElementById("result1").innerHTML = "The width is: " + width;
+    document.getElementById("result2").innerHTML = "The height is: " + height;
+    document.getElementById("result3").innerHTML = "";
+}
+
+//This function prints all the values in the array and their indexes
+function display() {
+    var i, result = "<table><tr><th>Index</th><th>Width</th><th>Height</th><th>Area</th></tr>";
+    for(i = 1; i < width.length; i++) {
+        result = result + "<tr><td>" + i + "</td><td>" + width[i] + "</td><td>" + height[i] + "</td><td>" + area[i] + "</td></tr>";
+	}
+    result = result + "</table>";
+    document.getElementById("result3").innerHTML = result;
+}
+
+</script>
+</head>
+
+
+<body>
+<h1>Array example</h1>
+
+You can insert a new value into the array using the Insert button.
+<p>
+You can display the all the values included height weidth and area styled as a table using the Display button.
+<p>
+
+Width: <input id="wdt" type="text"><br>
+
+<br>Height: <input id="hgh" type="text">
+<input type="button" value="Insert" onclick="insert()">
+<input type="button" value="Display" onclick="display()">
+
+</p>
+
+<p id="result1"></p>
+<p id="result2"></p>
+<p id="result3"></p>
+
+</body>
+</html>

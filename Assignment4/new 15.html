@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Calculation of the total Sum</title>
+<script>
+"use strict";
+//Function to calculate the sum with for loop//
+function total_sum() {
+    var s, e, i, r = 0 ;
+    s = Number(document.getElementById("id1").value);
+	e = Number(document.getElementById("id2").value);
+	
+for( i=0 ; s <= e ; s++) {
+     r = r + s;
+	 
+        
+    }
+document.getElementById("id3").value = r;
+
+}
+</script>
+</head>
+
+<body>
+
+<h1>Calculation of the sum</h1>
+
+<p>
+Give the start and end value.
+</p>
+
+
+Start: <input id="id1" type="text">
+End: <input id="id2" type="text">
+<input type="button" value="Calculate" onclick="total_sum()" >
+<p>
+Total sum: <input id="id3" type="text" disabled>
+
+
+
+</body>
+</html>

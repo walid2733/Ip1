@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Needed Velocity</title>
+</head>
+<body>
+<h1>Needed Velocity</h1>
+<p id="time"></p>
+<p id="distance"></p>
+<p id="result"></p>
+
+<script>
+/*this program calculates the Velocity needed.*/
+var time,distance,velocity;
+time = Number(prompt(" How many minutes is to the beginning of the first lesson?"));
+distance = Number(prompt("what is the distance in kilometres"));
+velocity = (distance*60)/time;      //the formula of area//
+document.getElementById("time").innerHTML = "Minutes to the beginning of the first lesson " + time + "min";
+document.getElementById("distance").innerHTML = "The distance in kilometres " + distance + "km";
+document.getElementById("result").innerHTML = "The Needed Velocity is " + velocity.toFixed(2) + "kmh<sup>-1</sup>";
+//alert ("the velocity is"+ velocity.toFixed(2));//
+console.log("Velocity" + velocity);
+
+</script>
+</body>
+
+</html>

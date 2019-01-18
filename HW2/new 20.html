@@ -1,0 +1,52 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset="utf-8"> 
+<title>The Dice Game 🎲</title> 
+<script> 
+"use strict";  
+function game1() { 
+    var count, num1, i, scores, sum = 0; 
+ count= Number(document.getElementById("id1").value); 
+ scores= "You have rolled the Dice " + count + " times." + "<br>" + " And you scored : " + "<br>"; 
+    for(i=0; i<count ; i++) {
+  num1 = Math.floor(Math.random() * 6) + 1; 
+ scores= scores+ num1 + "<br>"; 
+ sum= sum+ num1; 
+ } 
+ scores= scores + " Total sum of your all Scores is :" + sum + "<br>" + " Well done 👍 ! "; 
+ document.getElementById("scores").innerHTML= scores; 
+ }  
+function game2() { 
+ var num = 0, scores = 0, count = 0; 
+ while(num!=6) { 
+  num= Math.floor(Math.random()*6)+1; 
+  count=count+1; 
+  scores= scores+num+ "<br>"; 
+ } 
+ scores=scores + "You had to roll the Dice " + count + " times to score (6) "; 
+document.getElementById("scores").innerHTML= scores; 
+}  
+function game3() { 
+ var n = 0 , num, scores = 0; 
+ while(n!= num) {
+  n=num; 
+  num=Math.floor(Math.random()*6)+1; 
+  scores= scores+ num + "<br>"; 
+ } 
+ document.getElementById("scores").innerHTML=scores; 
+ } 
+</script> 
+</head>  
+<body>  
+<h1>The Dice Game 🎲</h1>  
+<p> How many times to roll the Dice? : <input type= "text" id= "id1"> 
+<input type="button" value="Play" onclick="game1()" > 
+</p> 
+<p> Roll the Dice untill it gets the Score 6 : <input type="button" value="Play" onclick="game2()"> 
+</p> 
+<p> Roll the Dice untill it gets the same Score : <input type="button" value="Play" onclick="game3()"> 
+</p> 
+<p id="scores"></p>    
+</body> 
+</html> 

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Calculation of the total price</title>
+<script>
+"use strict";
+//Function to calculate the sum with while loop"//
+function total_sum() {
+    var s, e, r = 0 ;
+    s = Number(document.getElementById("id1").value);
+	e = Number(document.getElementById("id2").value);
+	
+while(s <= e) {
+     r = r + s;
+	 s++;
+        
+    }
+document.getElementById("id3").value = r.toFixed(2);
+
+}
+</script>
+</head>
+
+<body>
+
+<h1>Calculation of the sum</h1>
+
+<p>
+Give the start and end value.
+</p>
+
+
+Start: <input id="id1" type="text">
+End: <input id="id2" type="text">
+<input type="button" value="Calculate" onclick="total_sum()" >
+<p>
+Total price: <input id="id3" type="text" disabled>
+
+
+
+</body>
+</html>

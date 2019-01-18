@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Card Game</title>
+<script>
+"use strict";
+//Function to calculate the sum of players card and the sum of computers cards and calculates the winner//
+function Try_Your_luck() {
+    var num1, num2, num3, num4, p, c, winner;
+    num1 = Math.floor(Math.random() * 13) + 1; 
+	
+	num2 = Math.floor(Math.random() * 13) + 1; 
+	
+	num3 = Math.floor(Math.random() * 13) + 1; 
+	
+	num4 = Math.floor(Math.random() * 13) + 1; 
+	
+	p = num1 + num2 ;
+	c = num3 + num4 ;
+
+if (p>21 && c>21){
+winner = "Your cards: " + num1 +" and " + num2 + ", sum is " + p +". Computer cards: " + num3 +" and " + num4 + ", sum is " + c + ". It's a tie (because your's sum and the computer's sum are both greater than 21)";
+document.getElementById("message").innerHTML=winner ;
+}
+else if (p==c){
+winner = "Your cards: " + num1 +" and " + num2 + ", sum is " + p +". Computer cards: " + num3 +" and " + num4 + ", sum is " + c + ". It's a tie (because your's sum and the computer's sum are both equal.)";
+document.getElementById("message").innerHTML=winner ;
+}
+else if (c>21 && p<=21){
+winner = "Your cards: " + num1 +" and " + num2 + ", sum is " + p +". Computer cards: " + num3 +" and " + num4 + ", sum is " + c + ". You win (because computer's sum is over 21).";
+document.getElementById("message").innerHTML=winner ;
+
+}
+else if (p>21 && c<=21){
+winner = "Your cards: " + num1 +" and " + num2 + ", sum is " + p +". Computer cards: " + num3 +" and " + num4 + ", sum is " + c + ". Computer wins (because your's sum is over 21).";
+document.getElementById("message").innerHTML=winner ;
+
+}
+else if (p<=21 && c<=21 && p>c){
+winner = "Your cards: " + num1 +" and " + num2 + ", sum is " + p +". Computer cards: " + num3 +" and " + num4 + ", sum is " + c + ". You win (because both have a sum that is less or equal to 21, and you have the greater sum).";
+document.getElementById("message").innerHTML=winner ;
+
+}
+else if (p<=21 && c<=21 && c>p){
+winner = "Your cards: " + num1 +" and " + num2 + ", sum is " + p +". Computer cards: " + num3 +" and " + num4 + ", sum is " + c + ". Computer wins (because both have a sum that is less or equal to 21, and Computer has the greater sum).";
+document.getElementById("message").innerHTML=winner ;
+
+}
+else {
+winner = "invailed";
+document.getElementById("message").innerHTML=winner ;
+}
+}
+</script>
+</head>
+
+<body>
+
+<h1>Lucky Cards</h1>
+
+<input type="button" value="Try your Luck" onclick="Try_Your_luck()" >
+<p>
+<p id="message"></p>
+
+
+
+</body>
+</html>
